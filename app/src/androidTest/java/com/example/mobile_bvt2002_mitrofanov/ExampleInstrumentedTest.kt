@@ -22,3 +22,4 @@ class ExampleInstrumentedTest {
         assertEquals("com.example.mobile_bvt2002_mitrofanov", appContext.packageName)
     }
 }
+

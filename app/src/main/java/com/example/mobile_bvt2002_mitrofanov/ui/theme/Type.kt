@@ -2,14 +2,22 @@ package com.example.mobile_bvt2002_mitrofanov.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.mobile_bvt2002_mitrofanov.R
 
 // Set of Material typography styles to start with
+val fredokaFamily = FontFamily(
+        Font(R.font.fredoka_variable, FontWeight.Normal),
+        Font(R.font.fredoka_variable, FontWeight.SemiBold),
+        Font(R.font.fredoka_variable, FontWeight.Medium),
+)
+
 val Typography = Typography(
         bodyLarge = TextStyle(
-                fontFamily = FontFamily.Default,
+                fontFamily = fredokaFamily,
                 fontWeight = FontWeight.Normal,
                 fontSize = 16.sp,
                 lineHeight = 24.sp,
