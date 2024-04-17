@@ -19,13 +19,11 @@ fun NavHostInit() {
         composable(NavigationTree.OnBoarding.name) {
             val onBoardingViewModel = hiltViewModel<OnBoardingViewModel>()
 
-            OnBoardingScreen(onBoardingViewModel = onBoardingViewModel, onContinueClicked = { /*TODO*/ }) {
-
-            }
-
-
+            OnBoardingScreen(
+                onBoardingViewModel = onBoardingViewModel,
+                onOnBoardingFinished = { /*TODO*/ })
         }
     }
 
-    NavHost(navController = navController, graph=navGraph)
+    NavHost(navController = navController, graph = navGraph)
 }
