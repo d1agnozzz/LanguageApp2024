@@ -4,6 +4,7 @@ import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.graphics.toArgb
@@ -42,5 +43,14 @@ fun OnBoardingScreen(
             viewState = this,
             onContinueClicked = { onBoardingViewModel.obtainEvent(OnBoardingEvent.ContinueClicked) },
             onSkipClicked = { onBoardingViewModel.obtainEvent(OnBoardingEvent.SkipClicked) })
+        LaunchedEffect(key1 = this.isOnBoardingFinished) {
+            when (isOnBoardingFinished) {
+                true -> onOnBoardingFinished()
+                else -> Unit
+            }
+            
+        }
     }
+
+
 }

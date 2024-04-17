@@ -30,6 +30,11 @@ class OnBoardingViewModel @Inject constructor(application: Application): Android
             _viewState.value = _viewState.value.copy(
                 stageNum = _viewState.value.stageNum + 1
             )
+        } else {
+            _viewState.value = _viewState.value.copy(
+                isOnBoardingFinished = true
+            )
+
         }
     }
 

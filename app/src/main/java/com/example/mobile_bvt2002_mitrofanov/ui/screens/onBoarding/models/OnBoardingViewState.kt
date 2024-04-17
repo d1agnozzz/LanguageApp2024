@@ -4,6 +4,7 @@ import com.example.mobile_bvt2002_mitrofanov.R
 
 data class OnBoardingStage(
     val stageNum: Int = 0,
+    val isOnBoardingFinished: Boolean = false,
 )
 
 const val ON_BOARDING_PAGES = 3

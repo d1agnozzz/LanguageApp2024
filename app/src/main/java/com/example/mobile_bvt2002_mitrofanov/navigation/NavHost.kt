@@ -6,6 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.createGraph
+import com.example.mobile_bvt2002_mitrofanov.ui.screens.languageSelect.LanguageSelectScreen
+import com.example.mobile_bvt2002_mitrofanov.ui.screens.languageSelect.LanguageSelectViewModel
 import com.example.mobile_bvt2002_mitrofanov.ui.screens.onBoarding.OnBoardingScreen
 import com.example.mobile_bvt2002_mitrofanov.ui.screens.onBoarding.OnBoardingViewModel
 
@@ -18,7 +20,18 @@ fun NavHostInit() {
 
             OnBoardingScreen(
                 onBoardingViewModel = onBoardingViewModel,
-                onOnBoardingFinished = { /*TODO*/ })
+                onOnBoardingFinished = { navController.navigate(NavigationTree.LanguageSelect.name){
+                    popUpTo(0)
+                } })
+        }
+        composable(NavigationTree.LanguageSelect.name) {
+
+            val languageSelectViewModel = hiltViewModel<LanguageSelectViewModel>()
+
+            LanguageSelectScreen(onBoardingViewModel = languageSelectViewModel) {
+
+            }
+
         }
     }
 
