@@ -1,6 +1,7 @@
 package com.example.mobile_bvt2002_mitrofanov.ui.theme
 
 import androidx.compose.material3.Typography
+import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -9,20 +10,34 @@ import androidx.compose.ui.unit.sp
 import com.example.mobile_bvt2002_mitrofanov.R
 
 // Set of Material typography styles to start with
+@OptIn(ExperimentalTextApi::class)
 val fredokaFamily = FontFamily(
-        Font(R.font.fredoka_variable, FontWeight.Normal),
-        Font(R.font.fredoka_variable, FontWeight.SemiBold),
-        Font(R.font.fredoka_variable, FontWeight.Medium),
+        Font(R.font.fredoka_regular, FontWeight.Normal),
+        Font(R.font.fredoka_semibold, FontWeight.SemiBold),
+        Font(R.font.fredoka_medium, FontWeight.Medium)
 )
 
 val Typography = Typography(
-        bodyLarge = TextStyle(
+        bodyMedium = TextStyle(
                 fontFamily = fredokaFamily,
                 fontWeight = FontWeight.Normal,
-                fontSize = 16.sp,
-                lineHeight = 24.sp,
+                fontSize = 15.sp,
+                lineHeight = 20.sp,
                 letterSpacing = 0.5.sp
+        ),
+        headlineMedium = TextStyle(
+                fontFamily = fredokaFamily,
+                fontWeight = FontWeight.Medium,
+                fontSize = 22.sp
+        ),
+        headlineSmall = TextStyle(
+                fontFamily = fredokaFamily,
+                fontWeight = FontWeight.Medium,
+                fontSize = 20.sp
         )
+
+
+
         /* Other default text styles to override
     titleLarge = TextStyle(
         fontFamily = FontFamily.Default,
