@@ -14,6 +14,8 @@ object AppColors{
     val White: Color = Color(0xFFFFFFFF)
     val White30 = White.copy(alpha = 0.3f)
     val GrayLight: Color = Color(0xFFE5E5E5)
+    val Gray = Color.Gray
+    val Gray40 = Gray.copy(alpha = 0.5f)
     val GrayDark: Color = Color(0xFF656872)
     val Dark: Color = Color(0xFF080E1E)
     val Dark20 = Dark.copy(alpha = 0.2f)
