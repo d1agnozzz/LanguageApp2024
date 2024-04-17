@@ -1,7 +1,5 @@
 package com.example.mobile_bvt2002_mitrofanov.ui.screens.onBoarding.models
 
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.Paragraph
 import com.example.mobile_bvt2002_mitrofanov.R
 
 data class OnBoardingStage(

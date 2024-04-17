@@ -9,9 +9,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.example.mobile_bvt2002_mitrofanov.common.EventHandler
 import com.example.mobile_bvt2002_mitrofanov.ui.screens.onBoarding.models.OnBoardingEvent
-import com.example.mobile_bvt2002_mitrofanov.ui.screens.onBoarding.models.OnBoardingViewState
 import com.example.mobile_bvt2002_mitrofanov.ui.screens.onBoarding.views.OnBoardingView
 
 @Composable

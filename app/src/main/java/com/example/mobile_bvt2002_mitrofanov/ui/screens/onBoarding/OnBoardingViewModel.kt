@@ -6,7 +6,6 @@ import com.example.mobile_bvt2002_mitrofanov.common.EventHandler
 import com.example.mobile_bvt2002_mitrofanov.ui.screens.onBoarding.models.ON_BOARDING_PAGES
 import com.example.mobile_bvt2002_mitrofanov.ui.screens.onBoarding.models.OnBoardingEvent
 import com.example.mobile_bvt2002_mitrofanov.ui.screens.onBoarding.models.OnBoardingStage
-import com.example.mobile_bvt2002_mitrofanov.ui.screens.onBoarding.models.OnBoardingViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
