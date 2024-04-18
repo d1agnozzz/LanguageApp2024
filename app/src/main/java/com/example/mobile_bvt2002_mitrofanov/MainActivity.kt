@@ -13,9 +13,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.mobile_bvt2002_mitrofanov.data.onBoardingDataStore
 import com.example.mobile_bvt2002_mitrofanov.navigation.NavHostInit
 import com.example.mobile_bvt2002_mitrofanov.ui.theme.MobileBVT2002MitrofanovTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -24,19 +27,24 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         val splash = installSplashScreen()
 
-//        setTheme(R.style.Theme_MobileBVT2002Mitrofanov)
-
-
-//        splash.setKeepOnScreenCondition {
+//        splash.setKeepOnScreenCondition() {
 //            true
 //        }
+
+        val onBoardingShowData = runBlocking { application.onBoardingDataStore.data.first() }
+
+
+
+        setTheme(R.style.Theme_MobileBVT2002Mitrofanov)
 
         setContent {
 
             MobileBVT2002MitrofanovTheme {
                 // A surface container using the 'background' color from the theme
-                Box(modifier = Modifier.windowInsetsPadding(WindowInsets.systemBars).fillMaxSize()) {
-                    NavHostInit()
+                Box(modifier = Modifier
+                    .windowInsetsPadding(WindowInsets.systemBars)
+                    .fillMaxSize()) {
+                    NavHostInit(onBoardingShowData.showOnboarding)
                 }
             }
         }

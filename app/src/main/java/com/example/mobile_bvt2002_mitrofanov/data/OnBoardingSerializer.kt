@@ -12,7 +12,7 @@ import java.io.OutputStream
 
 object OnBoardingSerializer : Serializer<ShowOnBoarding> {
     override val defaultValue: ShowOnBoarding
-        get() = ShowOnBoarding.getDefaultInstance()
+        get() = ShowOnBoarding.getDefaultInstance().toBuilder().setShowOnboarding(true).build()
 
     override suspend fun readFrom(input: InputStream): ShowOnBoarding {
         try {

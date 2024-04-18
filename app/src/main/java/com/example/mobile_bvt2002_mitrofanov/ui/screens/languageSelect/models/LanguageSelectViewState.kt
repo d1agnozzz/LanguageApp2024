@@ -5,5 +5,6 @@ enum class Language {
 }
 
 data class LanguageSelectViewState(
-    val selectedLanguage: Language = Language.Russian
+    val selectedLanguage: Language = Language.Russian,
+    val isLanguageSelectionFinished: Boolean = false,
 )

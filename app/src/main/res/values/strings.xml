@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Mobile-BVT2002-Mitrofanov</string>
+    <string name="languageSelectTopBarTitle">Language select</string>
+    <string name="topBarBackButton">back button\n</string>
+    <string name="loginHeader">Login</string>
+    <string name="loginTitle">For free, join now and start learning</string>
+    <string name="emailFieldLabel">Email address</string>
+    <string name="passwordFieldLabel">Password</string>
+    <string name="forgotPassword">Forgot Password</string>
+    <string name="loginButtonTitle">Login</string>
+    <string name="loginNotOurMember">Not out member?</string>
+    <string name="signUp">Signup</string>
+    <string name="createAccountTitle">Create an account</string>
+    <string name="firstNameTextFieldLabel">First name</string>
+    <string name="firstNameTextFieldPlaceholder">Your First Name</string>
 </resources>

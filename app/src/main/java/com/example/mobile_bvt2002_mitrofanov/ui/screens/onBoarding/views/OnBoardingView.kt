@@ -61,7 +61,7 @@ fun OnBoardingView(
                         stage = viewState.stageNum,
                         modifier = Modifier.width(50.dp).padding(vertical = 48.dp)
                     )
-                    Column {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Text(
                             text = onBoardPagesList[targetCount].title,
                             style = MaterialTheme.typography.headlineMedium,
