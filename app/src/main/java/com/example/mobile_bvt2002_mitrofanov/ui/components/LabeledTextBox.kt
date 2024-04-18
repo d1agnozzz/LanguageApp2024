@@ -37,7 +37,7 @@ fun LabeledTextBox(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     keyboardActions: KeyboardActions = KeyboardActions.Default,
 ) {
-    var showPassword = remember {
+    val showPassword = remember {
         mutableStateOf(false)
     }
 
@@ -87,7 +87,7 @@ fun LabeledTextBox(
             isError = isError,
             keyboardActions = keyboardActions,
             keyboardOptions = keyboardOptions,
-            visualTransformation = if (secureText) PasswordVisualTransformation() else VisualTransformation.None,
+            visualTransformation = if (!showPassword.value) PasswordVisualTransformation() else VisualTransformation.None,
         )
 
     }

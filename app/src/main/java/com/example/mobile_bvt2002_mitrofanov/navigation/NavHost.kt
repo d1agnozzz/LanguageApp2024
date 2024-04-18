@@ -44,7 +44,7 @@ fun NavHostInit(
             LanguageSelectScreen(onBoardingViewModel = languageSelectViewModel,
                 onLanguageSelectFinish = {
                     navController.navigate(NavigationTree.Login.name) {
-                        popUpTo(0)
+//                        popUpTo(0)
                     }
                 }
             )
@@ -54,11 +54,11 @@ fun NavHostInit(
         composable(NavigationTree.Login.name) {
             val loginViewModel = hiltViewModel<LoginViewModel>()
 
-            LoginScreen(
-                loginViewModel = loginViewModel,
-
-                )
-
+            LoginScreen(loginViewModel = loginViewModel, onLoginSuccess = {
+                navController.navigate(NavigationTree.Main.name) {
+                    popUpTo(0)
+                }
+            }, onBackClicked = { navController.popBackStack()})
         }
     }
 

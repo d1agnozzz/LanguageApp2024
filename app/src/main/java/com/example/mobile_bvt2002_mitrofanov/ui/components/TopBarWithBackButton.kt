@@ -1,5 +1,6 @@
 package com.example.mobile_bvt2002_mitrofanov.ui.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -28,7 +29,9 @@ fun TopBarWithBackButton(
         ),
         navigationIcon = {
 
-            Icon(modifier = Modifier.padding(start = 24.dp), painter = painterResource(id = R.drawable.arrow_back), contentDescription = stringResource(
+            Icon(modifier = Modifier.padding(start = 24.dp).clickable {
+                                                                      onBackClick()
+            }, painter = painterResource(id = R.drawable.arrow_back), contentDescription = stringResource(
                 id = R.string.topBarBackButton
             ), tint = AppColors.White)
         }

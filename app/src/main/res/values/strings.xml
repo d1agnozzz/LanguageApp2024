@@ -11,6 +11,15 @@
     <string name="loginNotOurMember">Not out member?</string>
     <string name="signUp">Signup</string>
     <string name="createAccountTitle">Create an account</string>
-    <string name="firstNameTextFieldLabel">First name</string>
+    <string name="firstNameTextFieldLabel">First Name</string>
     <string name="firstNameTextFieldPlaceholder">Your First Name</string>
+    <string name="secondNameTextFieldLabel">Second Name</string>
+    <string name="secondNameTextFieldPlaceholder">Your Second Name</string>
+    <string name="accountNameHeader">Signup</string>
+    <string name="choosePasswordTitle">Choose a Password</string>
+    <string name="confirmPasswordLabel">Confirm Password</string>
+    <string name="confirmNameButtonLabel">Continue</string>
+    <string name="alreadyOurMember">Already our member?</string>
+    <string name="signIn">Login</string>
+    <string name="signUpButtonLabel">Sign Up</string>
 </resources>
