@@ -16,7 +16,17 @@ class LoginViewModel @Inject constructor(application: Application): AndroidViewM
     private val _viewState = MutableStateFlow(LoginViewState())
     val viewState: StateFlow<LoginViewState> = _viewState
     override fun obtainEvent(event: LoginEvent) {
-        TODO("Not yet implemented")
+        when (event) {
+            is LoginEvent.EmailChanged -> emailChanged()
+            is LoginEvent.PasswordChanged -> passwordChanged()
+            is LoginEvent.FirstNameChanged -> firstNameChanged()
+            is LoginEvent.SecondNameChanged -> secondNameChanged()
+            LoginEvent.LoginClicked -> loginClicked()
+            LoginEvent.ForgotClicked -> forgotClicked()
+            LoginEvent.SignUpClicked -> signUpClicked()
+            LoginEvent.AlreadyMemberClicked -> alreadyMemberClicked()
+            LoginEvent.ConfirmNameClicked -> confirmNameClicked()
+        }
     }
 
 
