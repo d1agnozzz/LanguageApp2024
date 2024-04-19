@@ -71,16 +71,8 @@ fun SignInView(
         modifier = Modifier
             .padding(bottom = 24.dp)
             .fillMaxWidth(),
-        label = {
-            Text(
-                text = stringResource(id = R.string.emailFieldLabel),
-                color = MaterialTheme.colorScheme.onBackground,
-                style = MaterialTheme.typography.bodyMedium,
-            )
-        },
-        placeholder = {
-            Text(text = "Email", style = MaterialTheme.typography.bodyMedium)
-        },
+        label = R.string.emailFieldLabel,
+        placeholder = R.string.emailFieldPlaceholder,
         value = viewState.emailText,
         onValueChange = {
             onEmailChanged(it)
@@ -88,17 +80,8 @@ fun SignInView(
     )
     LabeledTextBox(
         modifier = Modifier.fillMaxWidth(),
-        label = {
-            Text(
-                text = stringResource(id = R.string.passwordFieldLabel),
-                color = MaterialTheme.colorScheme.onBackground,
-                style = MaterialTheme.typography.bodyMedium,
-//                        modifier = Modifier.offset(y = 16.dp)
-            )
-        },
-        placeholder = {
-            Text(text = "●●●●●", style = MaterialTheme.typography.bodyMedium)
-        },
+        label = R.string.passwordFieldLabel,
+        placeholder = R.string.passwordFieldPlaceholder,
         secureText = true,
         value = viewState.passwordText,
         onValueChange = {
@@ -121,14 +104,7 @@ fun SignInView(
         }
 
     }
-    FilledButton( onClick = { onLoginClicked() }) {
-        Text(
-            text = stringResource(id = R.string.loginButtonTitle),
-            color = AppColors.White,
-            style = MaterialTheme.typography.headlineMedium
-        )
-
-    }
+    FilledButton(onClick = { onLoginClicked() }, label = R.string.loginButtonTitle)
     Spacer(modifier = Modifier.height(24.dp))
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
         Text(
@@ -137,7 +113,7 @@ fun SignInView(
             style = MaterialTheme.typography.bodyMedium
         )
         Text(
-            modifier = Modifier.clickable(onClick = {onNotMemberClicked()}),
+            modifier = Modifier.clickable(onClick = { onNotMemberClicked() }),
             text = stringResource(id = R.string.signUp),
             color = MaterialTheme.colorScheme.primary,
             style = MaterialTheme.typography.bodyMedium

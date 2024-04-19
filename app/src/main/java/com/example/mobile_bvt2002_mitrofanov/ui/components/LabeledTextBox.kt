@@ -1,5 +1,6 @@
 package com.example.mobile_bvt2002_mitrofanov.ui.components
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
@@ -10,14 +11,19 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
@@ -26,8 +32,8 @@ import com.example.mobile_bvt2002_mitrofanov.ui.theme.AppColors
 
 @Composable
 fun LabeledTextBox(
-    label: @Composable () -> Unit,
-    placeholder: @Composable () -> Unit,
+    @StringRes label: Int,
+    @StringRes placeholder: Int,
     value: String,
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier,
@@ -37,27 +43,40 @@ fun LabeledTextBox(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     keyboardActions: KeyboardActions = KeyboardActions.Default,
 ) {
-    val showPassword = remember {
-        mutableStateOf(false)
+    var showPassword by remember {
+        mutableStateOf(!secureText)
     }
 
     Column {
-        label()
+        Text(
+            text = stringResource(id = label),
+            color = MaterialTheme.colorScheme.onBackground,
+            style = MaterialTheme.typography.bodyMedium,
+        )
         Spacer(modifier = Modifier.height(8.dp))
         TextField(
             modifier = modifier,
             value = value,
             onValueChange = onValueChange,
-            placeholder = placeholder,
+            placeholder = {
+                Text(
+
+                    text = stringResource(id = placeholder),
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            },
             singleLine = true,
             trailingIcon = {
-                           if (secureText) {
-                               Box(modifier = Modifier.clickable {
-                                   showPassword.value = !showPassword.value
-                               }) {
-                                   Icon(painter = painterResource(id = R.drawable.visibility_icon), contentDescription = "toggle password")
-                               }
-                           }
+                if (secureText) {
+                    Box(modifier = Modifier.clickable {
+                        showPassword = !showPassword
+                    }) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.visibility_icon),
+                            contentDescription = "toggle password"
+                        )
+                    }
+                }
             },
             shape = RoundedCornerShape(12.dp),
             colors = if (!isSystemInDarkTheme()) {
@@ -87,7 +106,7 @@ fun LabeledTextBox(
             isError = isError,
             keyboardActions = keyboardActions,
             keyboardOptions = keyboardOptions,
-            visualTransformation = if (!showPassword.value) PasswordVisualTransformation() else VisualTransformation.None,
+            visualTransformation = if (!showPassword) PasswordVisualTransformation() else VisualTransformation.None,
         )
 
     }

@@ -20,12 +20,14 @@ fun OnBoardingProgress(
 
     Row(modifier = modifier, horizontalArrangement = Arrangement.SpaceBetween) {
         repeat(3) {
-            Canvas(modifier = Modifier
-                .padding(horizontal = 8.dp)
-                .height(8.dp)) {
+            Canvas(
+                modifier = Modifier
+                    .padding(horizontal = 8.dp)
+                    .height(8.dp)
+            ) {
                 drawCircle(
                     color = when {
-                        it == stage  -> AppColors.Orange
+                        it == stage -> AppColors.Orange
                         else -> when (isDark) {
                             true -> AppColors.White30
                             else -> AppColors.Dark20

@@ -25,7 +25,8 @@ class LanguageSelectViewModel @Inject constructor(application: Application) :
     private val _viewState = MutableStateFlow(LanguageSelectViewState())
     val viewState: StateFlow<LanguageSelectViewState> = _viewState
 
-    @ApplicationContext private val context =   application.applicationContext
+    @ApplicationContext
+    private val context = application.applicationContext
 
     private suspend fun updateOnBoardingFlag(value: Boolean) {
         context.onBoardingDataStore.updateData { currentValue ->

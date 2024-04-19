@@ -59,7 +59,9 @@ fun OnBoardingView(
                     )
                     OnBoardingProgress(
                         stage = viewState.stageNum,
-                        modifier = Modifier.width(50.dp).padding(vertical = 48.dp)
+                        modifier = Modifier
+                            .width(50.dp)
+                            .padding(vertical = 48.dp)
                     )
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Text(

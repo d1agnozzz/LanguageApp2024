@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/DeepBlue"/>
+    <item android:drawable="@color/DeepBlue" />
 
     <item
-        android:gravity="center"
         android:width="320dp"
         android:height="320dp"
-        android:drawable="@drawable/ic_launcher_foreground"/>
+        android:drawable="@drawable/ic_launcher_foreground"
+        android:gravity="center" />
     <item
-        android:top="240dp"
         android:width="240dp"
         android:height="96dp"
+        android:drawable="@drawable/splash_branded_image"
         android:gravity="center"
-        android:drawable="@drawable/splash_branded_image"/>
+        android:top="240dp" />
 
 </layer-list>

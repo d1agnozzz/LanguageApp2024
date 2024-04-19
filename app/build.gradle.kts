@@ -26,7 +26,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -87,7 +90,7 @@ protobuf {
     }
 
     generateProtoTasks {
-        all().forEach() {task ->
+        all().forEach() { task ->
             task.builtins {
                 create("java")
                 create("kotlin")

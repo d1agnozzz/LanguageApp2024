@@ -4,5 +4,5 @@ option java_package = "com.example.mobile_bvt2002_mitrofanov.data";
 option java_multiple_files = true;
 
 message ShowOnBoarding {
-    bool show_onboarding = 1;
+  bool show_onboarding = 1;
 }

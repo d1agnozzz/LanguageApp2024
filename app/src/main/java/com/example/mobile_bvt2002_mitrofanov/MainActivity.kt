@@ -41,9 +41,11 @@ class MainActivity : ComponentActivity() {
 
             MobileBVT2002MitrofanovTheme {
                 // A surface container using the 'background' color from the theme
-                Box(modifier = Modifier
-                    .windowInsetsPadding(WindowInsets.systemBars)
-                    .fillMaxSize()) {
+                Box(
+                    modifier = Modifier
+                        .windowInsetsPadding(WindowInsets.systemBars)
+                        .fillMaxSize()
+                ) {
                     NavHostInit(onBoardingShowData.showOnboarding)
                 }
             }

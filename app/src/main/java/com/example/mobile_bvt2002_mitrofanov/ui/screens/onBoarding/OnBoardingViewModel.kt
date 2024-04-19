@@ -12,7 +12,8 @@ import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class OnBoardingViewModel @Inject constructor(application: Application): AndroidViewModel(application),
+class OnBoardingViewModel @Inject constructor(application: Application) :
+    AndroidViewModel(application),
     EventHandler<OnBoardingEvent> {
     private val _viewState = MutableStateFlow(OnBoardingStage())
     val viewState: StateFlow<OnBoardingStage> = _viewState

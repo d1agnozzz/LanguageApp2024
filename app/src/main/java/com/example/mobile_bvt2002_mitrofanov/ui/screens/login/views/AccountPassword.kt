@@ -17,7 +17,6 @@ import com.example.mobile_bvt2002_mitrofanov.R
 import com.example.mobile_bvt2002_mitrofanov.ui.components.FilledButton
 import com.example.mobile_bvt2002_mitrofanov.ui.components.LabeledTextBox
 import com.example.mobile_bvt2002_mitrofanov.ui.screens.login.models.LoginViewState
-import com.example.mobile_bvt2002_mitrofanov.ui.theme.AppColors
 
 @Composable
 fun AccountPassword(
@@ -39,19 +38,8 @@ fun AccountPassword(
         modifier = Modifier
             .padding(bottom = 24.dp)
             .fillMaxWidth(),
-        label = {
-            Text(
-                text = stringResource(id = R.string.passwordFieldLabel),
-                color = MaterialTheme.colorScheme.onBackground,
-                style = MaterialTheme.typography.bodyMedium
-            )
-        },
-        placeholder = {
-            Text(
-                text = "●●●●●",
-                style = MaterialTheme.typography.bodyMedium
-            )
-        },
+        label = R.string.passwordFieldLabel,
+        placeholder = R.string.passwordFieldPlaceholder,
         value = viewState.signUpPassword,
         onValueChange = {
             onSignUpPasswordChange(it)
@@ -63,19 +51,8 @@ fun AccountPassword(
         modifier = Modifier
             .padding(bottom = 24.dp)
             .fillMaxWidth(),
-        label = {
-            Text(
-                text = stringResource(id = R.string.confirmPasswordLabel),
-                color = MaterialTheme.colorScheme.onBackground,
-                style = MaterialTheme.typography.bodyMedium
-            )
-        },
-        placeholder = {
-            Text(
-                text = "●●●●●",
-                style = MaterialTheme.typography.bodyMedium
-            )
-        },
+        label = R.string.confirmPasswordLabel,
+        placeholder = R.string.passwordFieldPlaceholder,
         value = viewState.signUpPasswordRepeat,
         onValueChange = {
             onSignUpPasswordRepeatChange(it)
@@ -83,14 +60,8 @@ fun AccountPassword(
         secureText = true
     )
 
-    FilledButton( onClick = { onSignUpClicked() }) {
-        Text(
-            text = stringResource(id = R.string.signUpButtonLabel),
-            color = AppColors.White,
-            style = MaterialTheme.typography.headlineMedium
-        )
+    FilledButton(onClick = { onSignUpClicked() }, label = R.string.signUpButtonLabel)
 
-    }
     Spacer(modifier = Modifier.height(24.dp))
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
         Text(

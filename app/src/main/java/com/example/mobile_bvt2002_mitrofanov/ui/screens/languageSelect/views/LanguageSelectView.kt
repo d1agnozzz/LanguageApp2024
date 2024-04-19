@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -17,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.mobile_bvt2002_mitrofanov.R
 import com.example.mobile_bvt2002_mitrofanov.ui.components.FilledButton
 import com.example.mobile_bvt2002_mitrofanov.ui.screens.languageSelect.models.Language
 import com.example.mobile_bvt2002_mitrofanov.ui.screens.languageSelect.models.LanguageSelectViewState
@@ -48,16 +51,20 @@ fun LanguageSelectView(
             LazyColumn {
                 for (language in Language.entries) {
                     item {
-                        FilledButton(
+                        Button(
+                            onClick = { onLanguageSelect(language) },
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(bottom = 12.dp)
                                 .height(67.dp),
-                            onClick = {onLanguageSelect(language)},
-                            colors = ButtonDefaults.buttonColors(containerColor = when (language == viewState.selectedLanguage) {
-                                true -> AppColors.Orange
-                                else -> AppColors.LightCream
-                            })
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = when (language == viewState.selectedLanguage) {
+                                    true -> AppColors.Orange
+                                    else -> AppColors.LightCream
+                                }
+                            ),
+                            shape = RoundedCornerShape(20.dp)
+
                         ) {
                             Row(modifier = Modifier.fillMaxWidth()) {
                                 Text(
@@ -66,6 +73,7 @@ fun LanguageSelectView(
                                     color = AppColors.Dark
                                 )
                             }
+
                         }
 
                     }
@@ -75,10 +83,7 @@ fun LanguageSelectView(
 
             Spacer(modifier = Modifier.weight(1f))
 
-            FilledButton(onClick = onChooseClicked) {
-                Text(text = "Choose", style = MaterialTheme.typography.headlineMedium)
-
-            }
+            FilledButton(onClick = onChooseClicked, label = R.string.languageSelectButtonLabel)
 
         }
 

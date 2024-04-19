@@ -17,13 +17,12 @@ import com.example.mobile_bvt2002_mitrofanov.R
 import com.example.mobile_bvt2002_mitrofanov.ui.components.FilledButton
 import com.example.mobile_bvt2002_mitrofanov.ui.components.LabeledTextBox
 import com.example.mobile_bvt2002_mitrofanov.ui.screens.login.models.LoginViewState
-import com.example.mobile_bvt2002_mitrofanov.ui.theme.AppColors
 
 @Composable
-fun AccountName (
+fun AccountName(
     viewState: LoginViewState,
     onEmailChange: (String) -> Unit,
-    onFirstNameChange: (String) ->Unit,
+    onFirstNameChange: (String) -> Unit,
     onSecondNameChange: (String) -> Unit,
     onConfirmNameClicked: () -> Unit,
     onAlreadyMemberClicked: () -> Unit,
@@ -39,20 +38,8 @@ fun AccountName (
         modifier = Modifier
             .padding(bottom = 24.dp)
             .fillMaxWidth(),
-        label = {
-            Text(
-                text = stringResource(id = R.string.firstNameTextFieldLabel),
-                color = MaterialTheme.colorScheme.onBackground,
-                style = MaterialTheme.typography.bodyMedium
-            )
-        },
-        placeholder = {
-            Text(
-
-                text = stringResource(id = R.string.firstNameTextFieldPlaceholder),
-                style = MaterialTheme.typography.bodyMedium
-            )
-        },
+        label = R.string.firstNameTextFieldLabel,
+        placeholder = R.string.firstNameTextFieldPlaceholder,
         value = viewState.firstNameText,
         onValueChange = {
             onFirstNameChange(it)
@@ -63,19 +50,8 @@ fun AccountName (
         modifier = Modifier
             .padding(bottom = 24.dp)
             .fillMaxWidth(),
-        label = {
-            Text(
-                text = stringResource(id = R.string.secondNameTextFieldLabel),
-                color = MaterialTheme.colorScheme.onBackground,
-                style = MaterialTheme.typography.bodyMedium
-            )
-        },
-        placeholder = {
-            Text(
-                text = stringResource(id = R.string.secondNameTextFieldPlaceholder),
-                style = MaterialTheme.typography.bodyMedium
-            )
-        },
+        label = R.string.secondNameTextFieldLabel,
+        placeholder = R.string.secondNameTextFieldPlaceholder,
         value = viewState.secondNameText,
         onValueChange = {
             onSecondNameChange(it)
@@ -85,32 +61,15 @@ fun AccountName (
         modifier = Modifier
             .padding(bottom = 34.dp)
             .fillMaxWidth(),
-        label = {
-            Text(
-                text = stringResource(id = R.string.emailFieldLabel),
-                color = MaterialTheme.colorScheme.onBackground,
-                style = MaterialTheme.typography.bodyMedium
-            )
-        },
-        placeholder = {
-            Text(
-                text = "Email",
-                style = MaterialTheme.typography.bodyMedium
-            )
-        },
+        label = R.string.emailFieldLabel,
+        placeholder = R.string.emailFieldPlaceholder,
         value = viewState.emailText,
         onValueChange = {
             onEmailChange(it)
         }
     )
-    FilledButton(onClick = { onConfirmNameClicked() }) {
-        Text(
-            text = stringResource(id = R.string.confirmNameButtonLabel),
-            color = AppColors.White,
-            style = MaterialTheme.typography.headlineMedium
-        )
+    FilledButton(onClick = { onConfirmNameClicked() }, label = R.string.confirmNameButtonLabel)
 
-    }
     Spacer(modifier = Modifier.height(24.dp))
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
         Text(

@@ -20,6 +20,7 @@ import com.example.mobile_bvt2002_mitrofanov.ui.theme.AppColors
 fun TopBarWithBackButton(
     title: @Composable () -> Unit,
     backgroundColor: Color = AppColors.DeepBlue,
+    showBackButton: Boolean = true,
     onBackClick: () -> Unit
 ) {
     CenterAlignedTopAppBar(
@@ -28,12 +29,22 @@ fun TopBarWithBackButton(
             containerColor = backgroundColor
         ),
         navigationIcon = {
+            if (showBackButton) {
+                Icon(
+                    modifier = Modifier
+                        .padding(start = 24.dp)
+                        .clickable {
+                            onBackClick()
+                        },
+                    painter = painterResource(id = R.drawable.arrow_back),
+                    contentDescription = stringResource(
+                        id = R.string.topBarBackButton
+                    ),
+                    tint = AppColors.White
+                )
 
-            Icon(modifier = Modifier.padding(start = 24.dp).clickable {
-                                                                      onBackClick()
-            }, painter = painterResource(id = R.drawable.arrow_back), contentDescription = stringResource(
-                id = R.string.topBarBackButton
-            ), tint = AppColors.White)
+            }
+
         }
     )
 }

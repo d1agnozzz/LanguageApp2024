@@ -2,7 +2,7 @@ package com.example.mobile_bvt2002_mitrofanov.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-object AppColors{
+object AppColors {
     val DeepBlue: Color = Color(0xFF410FA3)
     val Blue: Color = Color(0xFF5B7BFE)
     val Orange: Color = Color(0xFFF76400)

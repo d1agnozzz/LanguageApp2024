@@ -12,46 +12,50 @@ import com.example.mobile_bvt2002_mitrofanov.R
 // Set of Material typography styles to start with
 @OptIn(ExperimentalTextApi::class)
 val fredokaFamily = FontFamily(
-        Font(R.font.fredoka_regular, FontWeight.Normal),
-        Font(R.font.fredoka_semibold, FontWeight.SemiBold),
-        Font(R.font.fredoka_medium, FontWeight.Medium)
+    Font(R.font.fredoka_regular, FontWeight.Normal),
+    Font(R.font.fredoka_semibold, FontWeight.SemiBold),
+    Font(R.font.fredoka_medium, FontWeight.Medium)
 )
 
 val Typography = Typography(
-        bodyMedium = TextStyle(
-                fontFamily = fredokaFamily,
-                fontWeight = FontWeight.Normal,
-                fontSize = 15.sp,
-                lineHeight = 20.sp,
-                letterSpacing = 0.5.sp
-        ),
-        headlineMedium = TextStyle(
-                fontFamily = fredokaFamily,
-                fontWeight = FontWeight.Medium,
-                fontSize = 22.sp
-        ),
-        headlineSmall = TextStyle(
-                fontFamily = fredokaFamily,
-                fontWeight = FontWeight.Medium,
-                fontSize = 20.sp
-        )
-
-
-
-        /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
+    bodyMedium = TextStyle(
+        fontFamily = fredokaFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
+        fontSize = 15.sp,
+        lineHeight = 20.sp,
         letterSpacing = 0.5.sp
+    ),
+    headlineMedium = TextStyle(
+        fontFamily = fredokaFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 22.sp
+    ),
+    headlineSmall = TextStyle(
+        fontFamily = fredokaFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 20.sp
+    ),
+    labelMedium = TextStyle(
+        fontFamily = fredokaFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 17.sp
     )
-    */
+
+
+    /* Other default text styles to override
+titleLarge = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Normal,
+    fontSize = 22.sp,
+    lineHeight = 28.sp,
+    letterSpacing = 0.sp
+),
+labelSmall = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Medium,
+    fontSize = 11.sp,
+    lineHeight = 16.sp,
+    letterSpacing = 0.5.sp
+)
+*/
 )
